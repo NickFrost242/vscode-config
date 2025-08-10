@@ -1,11 +1,13 @@
 # VSCode Neovim Configuration (API-first)
 
-This revision aligns with the VSCode Neovim docs: **all editor keybindings live in `init.lua`** and call VS Code commands via `VSCodeNotify`.  
+Configurations for VSCode Neovim Plugin. The focus here is to seamlessly integrate vim motions into VSCode's workflow.
+
+**All editor keybindings live in `init.lua`** and call VS Code commands via `VSCodeNotify`.
 Only contexts **outside the editor** (terminal focus, files explorer focus) remain in `keybindings.json` because Neovim is not active there.
 
 ## Files
-- `settings.json` — Editor behavior, Prettier defaults, UI choices, and `jj` escape via `vscode-neovim.compositeKeys`.
 - `init.lua` — **All editor keymaps** (Normal/Visual) implemented with `vim.fn.VSCodeNotify(...)`.
+- `settings.json` — Editor behavior, Prettier defaults, UI choices, and `jj` escape via `vscode-neovim.compositeKeys`.
 - `keybindings.json` — Minimal bindings for **terminal-focus** and **explorer-focus** actions only.
 
 ## Why this split?

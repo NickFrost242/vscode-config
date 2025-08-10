@@ -7,10 +7,10 @@
 
   // ---------- Explorer shortcuts (only while explorer focused) ----------
   { "key": "ctrl+e",  "command": "workbench.files.action.focusFilesExplorer" },
-  { "key": "n",       "command": "explorer.newFile",   "when": "filesExplorerFocus" },
-  { "key": "shift+n", "command": "explorer.newFolder", "when": "filesExplorerFocus" },
-  { "key": "r",       "command": "renameFile",         "when": "filesExplorerFocus" },
-  { "key": "d",       "command": "deleteFile",         "when": "filesExplorerFocus" },
+  { "key": "n",       "command": "explorer.newFile",   "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
+  { "key": "shift+n", "command": "explorer.newFolder", "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
+  { "key": "r",       "command": "renameFile",         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
+  { "key": "d",       "command": "deleteFile",         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus" },
 
   // ---------- Misc panel toggle (no Neovim involvement) ----------
   { "key": "ctrl+shift+j", "command": "workbench.action.togglePanel" },

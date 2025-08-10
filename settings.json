@@ -34,9 +34,16 @@
   "window.zoomLevel": 0.5,
   "zenMode.hideLineNumbers": false,
   "workbench.iconTheme": "material-icon-theme",
-  "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
   "workbench.activityBar.location": "hidden",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
-  }
+  },
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.startupEditor": "readme",
+
+  // ---------- Terminal ----------
+  "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cwd": "${workspaceFolder}"
 }
