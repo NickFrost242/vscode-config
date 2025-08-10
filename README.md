@@ -13,9 +13,6 @@ Only contexts **outside the editor** (terminal focus, files explorer focus) rema
 ## Why this split?
 - The VSCode Neovim extension recommends binding editor actions in Neovim config using `VSCodeNotify`.
 - When the **terminal** or **explorer** has focus, Neovim is not the active input handler; therefore VS Code keybindings must be used for those views.
-- This also fixes the issues you hit:
-  - **Space in terminal** now works (no space-prefixed VSCode keybindings; leader mappings are in `init.lua`).
-  - **`j`/`k` in Visual mode** behave normally (no accidental overrides; only `J`/`K` move lines).
 
 ## Keymap summary (from `init.lua`)
 - Tabs: `H` prev, `L` next, `gt` next, `gT` prev, `<Tab>/<S-Tab>` next/prev
