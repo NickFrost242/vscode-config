@@ -42,9 +42,8 @@ vim.keymap.set("n", "<leader>x", function()
   vim.fn.VSCodeNotify("workbench.action.closeActiveEditor")
 end, { silent = true })
 
-nmap("<leader>f",  "workbench.action.quickOpen")
-nmap("<leader>p",  "editor.action.formatDocument")
-nmap("<leader>ca", "editor.action.quickFix")
+nmap("<leader>f",  "editor.action.formatDocument")
+nmap("<leader>g", "editor.action.quickFix")
 nmap("gh",         "editor.action.peekDefinition")
 nmap("<leader>c",  "editor.action.commentLine")
 
