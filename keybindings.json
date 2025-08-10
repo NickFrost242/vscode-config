@@ -1,0 +1,20 @@
+[
+  // ---------- Terminal management (terminal must be focused) ----------
+  { "key": "ctrl+shift+n", "command": "workbench.action.terminal.new",           "when": "terminalFocus" },
+  { "key": "ctrl+shift+w", "command": "workbench.action.terminal.kill",          "when": "terminalFocus" },
+  { "key": "ctrl+shift+a", "command": "workbench.action.terminal.focusNext",     "when": "terminalFocus" },
+  { "key": "ctrl+shift+b", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
+
+  // ---------- Explorer shortcuts (only while explorer focused) ----------
+  { "key": "ctrl+e",  "command": "workbench.files.action.focusFilesExplorer" },
+  { "key": "n",       "command": "explorer.newFile",   "when": "filesExplorerFocus" },
+  { "key": "shift+n", "command": "explorer.newFolder", "when": "filesExplorerFocus" },
+  { "key": "r",       "command": "renameFile",         "when": "filesExplorerFocus" },
+  { "key": "d",       "command": "deleteFile",         "when": "filesExplorerFocus" },
+
+  // ---------- Misc panel toggle (no Neovim involvement) ----------
+  { "key": "ctrl+shift+j", "command": "workbench.action.togglePanel" },
+
+  // ---------- Emmet match tag ----------
+  { "key": "ctrl+shift+5", "command": "editor.emmet.action.matchTag", "when": "editorTextFocus" }
+]

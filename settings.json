@@ -1,0 +1,42 @@
+{
+  // ---------- Editing & Navigation ----------
+  "editor.lineNumbers": "relative",
+  "editor.find.highlightSearch": true,
+  "editor.suggest.insertMode": "replace",
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": true,
+
+  // Default formatters
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // Whitespace / newline hygiene
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+
+  // Auto-update imports on move/rename
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // ---------- VSCode Neovim ----------
+  // Use composite keys for jj escape (per extension docs)
+  "vscode-neovim.compositeKeys": {
+    "jj": { "command": "vscode-neovim.escape" }
+  },
+  "vscode-neovim.compositeTimeout": 250,
+
+  // ---------- UI & Layout ----------
+  "workbench.statusBar.visible": false,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "window.zoomLevel": 0.5,
+  "zenMode.hideLineNumbers": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+  "workbench.activityBar.location": "hidden",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
+}

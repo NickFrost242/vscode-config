@@ -1,0 +1,30 @@
+# VSCode Neovim Configuration (API-first)
+
+This revision aligns with the VSCode Neovim docs: **all editor keybindings live in `init.lua`** and call VS Code commands via `VSCodeNotify`.  
+Only contexts **outside the editor** (terminal focus, files explorer focus) remain in `keybindings.json` because Neovim is not active there.
+
+## Files
+- `settings.json` — Editor behavior, Prettier defaults, UI choices, and `jj` escape via `vscode-neovim.compositeKeys`.
+- `init.lua` — **All editor keymaps** (Normal/Visual) implemented with `vim.fn.VSCodeNotify(...)`.
+- `keybindings.json` — Minimal bindings for **terminal-focus** and **explorer-focus** actions only.
+
+## Why this split?
+- The VSCode Neovim extension recommends binding editor actions in Neovim config using `VSCodeNotify`.
+- When the **terminal** or **explorer** has focus, Neovim is not the active input handler; therefore VS Code keybindings must be used for those views.
+- This also fixes the issues you hit:
+  - **Space in terminal** now works (no space-prefixed VSCode keybindings; leader mappings are in `init.lua`).
+  - **`j`/`k` in Visual mode** behave normally (no accidental overrides; only `J`/`K` move lines).
+
+## Keymap summary (from `init.lua`)
+- Tabs: `H` prev, `L` next, `gt` next, `gT` prev, `<Tab>/<S-Tab>` next/prev
+- Groups: `<leader>h/j/k/l` focus left/below/above/right
+- Splits: `<leader>s` split down, `<leader>v` split right
+- File ops: `<leader>w` save, `<leader>q` close, `<leader>x` save+close
+- Actions: `<leader>f` Quick Open, `<leader>p` Format, `<leader>ca` Quick Fix, `gh` Peek def, `<leader>c` Toggle comment
+- Diagnostics: `[d` prev, `]d` next
+- Clipboard: `<C-c>` copy (normal/visual)
+- Visual edit: `<` outdent, `>` indent, `J`/`K` move lines; **`j`/`k` unaffected**
+
+## Terminal / Explorer (from `keybindings.json`)
+- Terminal (when terminal focused): `Ctrl+Shift+N` new, `Ctrl+Shift+W` kill, `Ctrl+Shift+A` next, `Ctrl+Shift+B` previous
+- Explorer: `Ctrl+E` focus explorer; inside explorer: `n` new file, `Shift+N` new folder, `r` rename, `d` delete
